@@ -10,7 +10,7 @@ def add_virtual_column(df: pd.DataFrame, role: str, new_column: str) -> pd.DataF
     if new_column in df.columns:
         return pd.DataFrame()
     
-    # Remove whitespace 
+    # Remove whitespaces 
     role = role.strip()
     
     # Check for number of operators in the role
@@ -49,4 +49,5 @@ def add_virtual_column(df: pd.DataFrame, role: str, new_column: str) -> pd.DataF
     elif operator_found == '*':
         df_copy[new_column] = df_copy[col1] * df_copy[col2]
     
+
     return df_copy
